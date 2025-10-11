@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Green Villa Yala Holiday Resort - Bird Friendly Resort at Yodakandiya, Tissamaharama. Experience wildlife adventure at Yala National Park with safari tours.">
+    <meta name="keywords" content="Yala resort, Green Villa Yala, Yala safari, Tissamaharama hotel, Yala National Park, wildlife Sri Lanka, bird watching resort, Yala accommodation">
+    <title>Green Villa Yala Holiday Resort - Unison | World's Trust</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-hero {
+            background-color: #2c5f7c;
+            padding-top: 120px;
+        }
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+        }
+        
+        /* Custom Styles for the Image Carousel */
+        .image-carousel-section {
+            padding: 80px 0; 
+            background: white;
+        }
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            height: 600px;
+            position: relative;
+            display: none;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-slide.active {
+            display: block;
+        }
+
+        /* Yala Wildlife Background Image */
+        .yala-wildlife-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(30, 50, 70, 0.75), rgba(44, 95, 124, 0.75)), 
+                        url('images/yala-wildlife-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Map and Contact Section Styling */
+        .resort-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+            align-items: center;
+        }
+        .resort-map-container {
+            max-width: 1000px;
+            width: 100%;
+            height: 580px; /* Confirmed Height: 580px */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+        /* CRITICAL FIX: Changed 'cover' to 'contain' and added padding to ensure the full image shows without cropping */
+        .resort-map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures the whole image is visible */
+            padding: 10px; /* Optional: Adds a small internal border/padding so image isn't right against the edge */
+            background-color: white; /* Ensures map has a white background if image doesn't fill the space */
+        }
+
+        .wildlife-card-text {
+            font-size: 14px; 
+            color: rgba(255,255,255,0.9); 
+            line-height: 1.2; 
+        }
+
+        @media (max-width: 968px) {
+            .carousel-slide {
+                height: 400px;
+            }
+            .resort-contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .yala-wildlife-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Unison - World's Trust" class="logo-new">
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="index.html#about" class="nav-link">ABOUT US</a></li>
+                <li><a href="index.html#services" class="nav-link active">SERVICES</a></li>
+                <li><a href="index.html#contact" class="nav-link">CONTACT US</a></li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background-image: linear-gradient(rgba(30, 50, 70, 0.85), rgba(30, 50, 70, 0.85)), url('images/yala-bg.jpg');">
+        <div class="container">
+            <div style="padding: 80px 0; text-align: center;">
+                <h1 style="color: white; font-size: 48px; margin-bottom: 20px; font-weight: 700;">Green Villa Yala Holiday Resort</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 20px; margin-bottom: 0;">Wildlife Adventure at Sri Lanka's Premier National Park</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: white;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <div style="background: linear-gradient(135deg, #64B5FF 0%, #2196F3 100%); color: white; padding: 20px 40px; border-radius: 50px; display: inline-block; margin-bottom: 30px; font-size: 20px; font-weight: 600;">
+                    <i class="fas fa-dove"></i> Recognized "Bird Friendly Resort"
+                </div>
+                <h2 style="font-size: 38px; font-weight: 700; color: #1e3246; margin-bottom: 30px;">Your Gateway to Yala National Park</h2>
+                <p style="font-size: 17px; color: #666; line-height: 1.8; margin-bottom: 20px;">
+                    Green Villa Yala is a lakefront villa located at Weweyaya, Yodakandiya in Tissamaharama, offering the perfect base for your wildlife adventure. Just 30 minutes from Yala National Park, we provide comfortable accommodation and professional safari tour arrangements.
+                </p>
+                <p style="font-size: 17px; color: #666; line-height: 1.8;">
+                    We can arrange jeeps for your safari visit to the nearby National Park and to other nature sanctuaries close to our villa, as well as transport to tour anywhere within the region.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: #f5f5f5;">
+        <div class="container">
+            <h2 style="font-size: 38px; font-weight: 700; color: #1e3246; text-align: center; margin-bottom: 50px;">Resort Facilities</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                <div style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <div style="font-size: 50px; margin-bottom: 20px; color: #64B5F6;"><i class="fas fa-snowflake"></i></div>
+                    <h4 style="font-size: 20px; color: #1e3246; margin-bottom: 10px;">Air Conditioning</h4>
+                    <p style="font-size: 15px; color: #666; line-height: 1.6;">All rooms with A/C and hot water facilities</p>
+                </div>
+                
+                <div style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <div style="font-size: 50px; margin-bottom: 20px; color: #64B5F6;"><i class="fas fa-swimming-pool"></i></div>
+                    <h4 style="font-size: 20px; color: #1e3246; margin-bottom: 10px;">Swimming Pool</h4>
+                    <p style="font-size: 15px; color: #666; line-height: 1.6;">Relaxing pool with lakefront views</p>
+                </div>
+                
+                <div style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <div style="font-size: 50px; margin-bottom: 20px; color: #64B5F6;"><i class="fas fa-car"></i></div>
+                    <h4 style="font-size: 20px; color: #1e3246; margin-bottom: 10px;">Free Parking</h4>
+                    <p style="font-size: 15px; color: #666; line-height: 1.6;">Secure parking for all guests</p>
+                </div>
+                
+                <div style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <div style="font-size: 50px; margin-bottom: 20px; color: #64B5F6;"><i class="fas fa-water"></i></div>
+                    <h4 style="font-size: 20px; color: #1e3246; margin-bottom: 10px;">Lake Front Location</h4>
+                    <p style="font-size: 15px; color: #666; line-height: 1.6;">Beautiful views of Yodakandiya Lake</p>
+                </div>
+                
+                <div style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <div style="font-size: 50px; margin-bottom: 20px; color: #64B5F6;"><i class="fas fa-utensils"></i></div>
+                    <h4 style="font-size: 20px; color: #1e3246; margin-bottom: 10px;">Breakfast Included</h4>
+                    <p style="font-size: 15px; color: #666; line-height: 1.6;">Delicious breakfast to start your day</p>
+                </div>
+                
+                <div style="background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+                    <div style="font-size: 50px; margin-bottom: 20px; color: #64B5F6;"><i class="fas fa-paw"></i></div>
+                    <h4 style="font-size: 20px; color: #1e3246; margin-bottom: 10px;">Safari Arrangements</h4>
+                    <p style="font-size: 15px; color: #666; line-height: 1.6;">We organize all your safari tours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="image-carousel-section">
+        <div class="container">
+            <h2 style="font-size: 38px; font-weight: 700; color: #1e3246; text-align: center; margin-bottom: 50px;">A Peek at Green Villa Yala</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-track" id="yala-carousel">
+                    <div class="carousel-slide active">
+                        <img src="images/yala-pool-sunset.jpg" alt="Green Villa Yala Pool at Sunset">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/yala-dining-wide.jpg" alt="Green Villa Yala Open Air Dining Pavilion">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/yala-room-bed-focus.jpg" alt="Green Villa Yala Guest Room Interior">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/yala-garden-path.jpg" alt="Green Villa Yala Garden Path">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/yala-porch-dining.jpg" alt="Green Villa Yala Private Porch Dining">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/yala-glamping-interior.jpg" alt="Green Villa Yala Luxury Glamping Tent Interior">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: white;">
+        <div class="container">
+            <h2 style="font-size: 38px; font-weight: 700; color: #1e3246; text-align: center; margin-bottom: 15px;">Nearby Attractions & Distances</h2>
+            <p style="font-size: 18px; color: #666; text-align: center; margin-bottom: 50px;">Easy access to national parks and cultural sites</p>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="margin-bottom: 40px;">
+                    <h3 style="font-size: 26px; color: #1e3246; margin-bottom: 20px; border-bottom: 2px solid #64B5F6; padding-bottom: 10px;"><i class="fas fa-paw"></i> Wildlife & Nature</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Yala National Park</span>
+                            <span style="background: #64B5F6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">30 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Bundala (Migratory Birds)</span>
+                            <span style="background: #64B5F6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">45 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Lunugamwehera National Park</span>
+                            <span style="background: #64B5F6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">90 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Udawalawa National Park</span>
+                            <span style="background: #64B5F6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">90 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Kalmetiya Bird Sanctuary</span>
+                            <span style="background: #64B5F6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">90 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Kirinda Beach</span>
+                            <span style="background: #64B5F6; color: white; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">20 min</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 26px; color: #1e3246; margin-bottom: 20px; border-bottom: 2px solid #FFD700; padding-bottom: 10px;"><i class="fas fa-place-of-worship"></i> Cultural & Historical Sites</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Raja Maha Vihara Temple</span>
+                            <span style="background: #FFD700; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">15 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Sithulpawwa Temple</span>
+                            <span style="background: #FFD700; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">45 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Kataragama Temple</span>
+                            <span style="background: #FFD700; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">45 min</span>
+                        </div>
+                        <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 16px; color: #333; font-weight: 600;">Buduruwagala Temple</span>
+                            <span style="background: #FFD700; color: #333; padding: 5px 15px; border-radius: 20px; font-size: 14px; font-weight: 600;">90 min</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: #f5f5f5;">
+        <div class="container">
+            <h2 style="font-size: 38px; font-weight: 700; color: #1e3246; text-align: center; margin-bottom: 50px;">Find Green Villa Yala</h2>
+            
+            <div class="resort-contact-grid">
+                <div class="contact-info">
+                    <h3 style="font-size: 28px; color: #1e3246; margin-bottom: 30px;">Direct Contact</h3>
+                    <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
+                        <div style="font-size: 24px; width: 50px; height: 50px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2c5f7c;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px; color: #1e3246; margin-bottom: 5px;">Address</h4>
+                            <p style="font-size: 15px; color: #666;">Weweyaya, Yodakandiya, Tissamaharama</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
+                        <div style="font-size: 24px; width: 50px; height: 50px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2c5f7c;">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px; color: #1e3246; margin-bottom: 5px;">Phone Numbers</h4>
+                            <p style="font-size: 15px; color: #666;"><a href="tel:+94761728517" style="color: #666; text-decoration: none;">+94 76 172 8 517</a></p>
+                            <p style="font-size: 15px; color: #666;"><a href="tel:+94716444863" style="color: #666; text-decoration: none;">+94 71 644 4 863</a></p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
+                        <div style="font-size: 24px; width: 50px; height: 50px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2c5f7c;">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px; color: #1e3246; margin-bottom: 5px;">Email</h4>
+                            <p style="font-size: 15px; color: #666;"><a href="mailto:info@greenvillayala.lk" style="color: #666; text-decoration: none;">info@greenvillayala.lk</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resort-map">
+                    <h3 style="font-size: 28px; color: #1e3246; margin-bottom: 20px;">Location Map (Yoda Lake)</h3>
+                    <div class="resort-map-container">
+                        <img src="images/yala-location-map.jpg" alt="Map to Green Villa Yala">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="yala-wildlife-section">
+        <div class="container">
+            <h2 style="font-size: 38px; font-weight: 700; color: white; text-align: center; margin-bottom: 50px;">Yala National Park Wildlife</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 50px; margin-bottom: 15px; color: white;"><i class="fas fa-paw"></i></div>
+                    <h4 style="font-size: 18px; color: white; margin-bottom: 8px;">Leopards</h4>
+                    <p class="wildlife-card-text">Highest density in world</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 50px; margin-bottom: 15px; color: white;"><i class="fas fa-paw"></i></div>
+                    <h4 style="font-size: 18px; color: white; margin-bottom: 8px;">Elephants</h4>
+                    <p class="wildlife-card-text">Majestic wild herds</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 50px; margin-bottom: 15px; color: white;"><i class="fas fa-paw"></i></div>
+                    <h4 style="font-size: 18px; color: white; margin-bottom: 8px;">Sloth Bears</h4>
+                    <p class="wildlife-card-text">Rare bear species</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+                    <div style="font-size: 50px; margin-bottom: 15px; color: white;"><i class="fas fa-dove"></i></div>
+                    <h4 style="font-size: 18px; color: white; margin-bottom: 8px;">Deer & Birds</h4>
+                    <p class="wildlife-card-text">Diverse wildlife</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding: 80px 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="font-size: 40px; color: #1e3246; margin-bottom: 20px;">Book Your Wildlife Adventure</h2>
+                <p style="font-size: 18px; color: #666; margin-bottom: 15px; line-height: 1.7;">
+                    Experience the thrill of Yala National Park from the comfort of Green Villa Yala
+                </p>
+                <p style="font-size: 16px; color: #666; margin-bottom: 40px;">
+                    Contact: 076 172 8 517 / 071 644 4 863
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/94716444863" target="_blank" style="display: inline-block; padding: 16px 40px; background: #25D366; color: white; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);">
+                        Book via WhatsApp
+                    </a>
+                    <a href="index.html#contact" style="display: inline-block; padding: 16px 40px; background: #2c5f7c; color: white; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Unison - World's Trust" class="logo-footer">
+                    </div>
+                    <p>World's Trust in Business Solutions</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="business-srilanka.html">Business Setup</a></li>
+                        <li><a href="business-tour.html">Business Tours</a></li>
+                        <li><a href="yala-resort.html">Yala Resort</a></li>
+                        <li><a href="gemstones.html">Gemstones</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+94778222611">+94 778 222 611</a></li>
+                        <li><a href="tel:+94716444863">+94 716 444 863</a></li>
+                        <li><a href="mailto:kmkamalranjith@gmail.com">Email Us</a></li>
+                        <li><a href="https://wa.me/94716444863" target="_blank">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Unison - World's Trust. All Rights Reserved.</p>
+                <p><a href="admin.html" style="color: rgba(255,255,255,0.3); font-size: 12px;">Admin</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('yala-carousel');
+            const slides = document.querySelectorAll('#yala-carousel .carousel-slide');
+            let currentSlide = 0;
+            const slideInterval = 4000;
+
+            if (slides.length > 0) {
+                slides[0].classList.add('active');
+
+                function nextSlide() {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }
+
+                setInterval(nextSlide, slideInterval);
+            }
+        });
+    </script>
+</body>
+</html>
