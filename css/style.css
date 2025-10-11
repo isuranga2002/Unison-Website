@@ -1,6 +1,6 @@
 /* =====================================================
-   UNISON WEBSITE - COMPLETE CLEAN STYLESHEET
-   Professional Business Website - No Duplications
+   UNISON WEBSITE - UPDATED STYLESHEET
+   WhatsApp Colors + Mobile Responsive Fixes
 ===================================================== */
 
 /* ========== 1. RESET & BASE STYLES ========== */
@@ -18,6 +18,8 @@
     --light-blue: #64B5F6;
     --blue: #2c5f7c;
     --green: #25D366;
+    --whatsapp-green: #25D366;
+    --whatsapp-dark: #128C7E;
 }
 
 html {
@@ -226,6 +228,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.hero-title .no-break {
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .hero-subtitle {
@@ -245,9 +253,11 @@ body {
 }
 
 .btn-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     padding: 16px 40px;
-    background: var(--green);
+    background: var(--whatsapp-green);
     color: var(--white);
     text-decoration: none;
     font-size: 16px;
@@ -263,6 +273,10 @@ body {
     background: #20BA5A;
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+.btn-primary i {
+    font-size: 20px;
 }
 
 .btn-secondary {
@@ -436,6 +450,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -649,6 +664,13 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: var(--dark-text);
+}
+
+/* WhatsApp Icon Styling */
+.contact-icon.whatsapp-icon {
+    background: var(--whatsapp-green);
+    color: var(--white);
 }
 
 .contact-item h4 {
@@ -672,6 +694,17 @@ body {
     color: var(--light-blue);
 }
 
+/* WhatsApp Link Styling */
+.whatsapp-link {
+    color: var(--whatsapp-green) !important;
+    font-weight: 600;
+}
+
+.whatsapp-link:hover {
+    color: var(--whatsapp-dark) !important;
+    text-decoration: underline;
+}
+
 .social-links {
     display: flex;
     gap: 15px;
@@ -688,12 +721,24 @@ body {
     justify-content: center;
     color: var(--dark-text);
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .social-icon:hover {
     background: var(--light-blue);
     color: var(--white);
     transform: translateY(-5px);
+}
+
+/* WhatsApp Social Icon */
+.social-icon.whatsapp-social {
+    background: var(--whatsapp-green);
+    color: var(--white);
+}
+
+.social-icon.whatsapp-social:hover {
+    background: var(--whatsapp-dark);
+    transform: translateY(-5px) scale(1.1);
 }
 
 .contact-map h3 {
@@ -761,10 +806,23 @@ body {
     text-decoration: none;
     font-size: 15px;
     transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .footer-col ul li a:hover {
     color: var(--blue);
+}
+
+/* WhatsApp Link in Footer */
+.footer-col ul li a.whatsapp-link {
+    color: var(--whatsapp-green);
+    font-weight: 600;
+}
+
+.footer-col ul li a.whatsapp-link:hover {
+    color: var(--whatsapp-dark);
 }
 
 .footer-col p {
@@ -848,6 +906,10 @@ body {
     .why-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .container {
+        padding: 0 30px;
+    }
 }
 
 @media (max-width: 968px) {
@@ -897,6 +959,10 @@ body {
         grid-template-columns: 1fr;
     }
     
+    .about-image {
+        height: 400px;
+    }
+    
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -925,10 +991,13 @@ body {
     
     .nav-container {
         padding: 0 20px;
+        height: 70px;
     }
     
     .hero-section {
         background-attachment: scroll;
+        height: 80vh;
+        min-height: 500px;
     }
     
     .hero-title {
@@ -947,10 +1016,16 @@ body {
     .btn-primary, .btn-secondary {
         width: 100%;
         max-width: 300px;
+        padding: 14px 30px;
+        font-size: 14px;
     }
     
     .section-title {
         font-size: 32px;
+    }
+    
+    .section-description {
+        font-size: 16px;
     }
     
     .why-grid {
@@ -964,11 +1039,42 @@ body {
     .logo-footer {
         height: 60px;
     }
+    
+    .services-section {
+        background-attachment: scroll;
+        padding: 60px 0;
+    }
+    
+    .contact-section {
+        background-attachment: scroll;
+        padding: 60px 0;
+    }
+    
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .why-section {
+        padding: 60px 0;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-title {
         font-size: 28px;
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .hero-content {
+        padding: 0 20px;
     }
     
     .footer-content {
@@ -982,14 +1088,144 @@ body {
     .logo-footer {
         height: 50px;
     }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+    
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+    }
 }
 
-/* ========== 12. HIDE OLD LOGO ELEMENTS ========== */
+/* ========== 12. ADDITIONAL MOBILE FIXES ========== */
+@media (max-width: 968px) {
+    /* Fix for mobile menu on small screens */
+    .nav-menu {
+        width: 280px;
+    }
+    
+    /* Fix hero section for mobile */
+    .hero-image-fallback {
+        background-attachment: scroll;
+    }
+    
+    /* Ensure touch targets are large enough */
+    .nav-link {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+    
+    /* Fix service cards on mobile */
+    .service-image {
+        height: 250px;
+    }
+    
+    .service-content {
+        padding: 25px;
+    }
+    
+    .service-content h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Further mobile optimizations */
+    .hero-section {
+        height: 70vh;
+        min-height: 450px;
+    }
+    
+    .scroll-indicator {
+        bottom: 20px;
+    }
+    
+    .about-image {
+        height: 300px;
+    }
+    
+    .service-image {
+        height: 200px;
+    }
+    
+    .why-card {
+        padding: 30px 20px;
+    }
+    
+    .why-icon {
+        font-size: 40px;
+    }
+}
+
+/* ========== 13. LANDSCAPE ORIENTATION FIX ========== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero-section {
+        height: 100vh;
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* ========== 14. HIDE OLD LOGO ELEMENTS ========== */
 .logo-img,
 .brand-text,
 .brand-name,
 .brand-tagline {
     display: none !important;
+}
+
+/* ========== 15. PRINT STYLES ========== */
+@media print {
+    .navbar,
+    .hamburger,
+    .scroll-indicator,
+    .hero-buttons,
+    .social-links {
+        display: none;
+    }
+    
+    .hero-section {
+        height: auto;
+        min-height: 200px;
+        page-break-after: always;
+    }
+    
+    .service-card,
+    .why-card {
+        page-break-inside: avoid;
+    }
 }
 
 /* ========== END OF STYLESHEET ========== */
