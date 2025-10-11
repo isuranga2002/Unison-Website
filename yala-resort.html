@@ -70,18 +70,17 @@
         .resort-map-container {
             max-width: 1000px;
             width: 100%;
-            height: 580px; /* Confirmed Height: 580px */
+            height: 580px;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
         }
-        /* CRITICAL FIX: Changed 'cover' to 'contain' and added padding to ensure the full image shows without cropping */
         .resort-map-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ensures the whole image is visible */
-            padding: 10px; /* Optional: Adds a small internal border/padding so image isn't right against the edge */
-            background-color: white; /* Ensures map has a white background if image doesn't fill the space */
+            object-fit: contain;
+            padding: 10px;
+            background-color: white;
         }
 
         .wildlife-card-text {
@@ -99,6 +98,7 @@
             }
             .yala-wildlife-section {
                 padding: 60px 0;
+                background-attachment: scroll;
             }
         }
     </style>
@@ -132,7 +132,7 @@
         <div class="container">
             <div style="padding: 80px 0; text-align: center;">
                 <h1 style="color: white; font-size: 48px; margin-bottom: 20px; font-weight: 700;">Green Villa Yala Holiday Resort</h1>
-                <p style="color: rgba(255,255,255,0.9); font-size: 20px; margin-bottom: 0;">Wildlife Adventure at Sri Lanka's Premier National Park</p>
+                <p style="color: rgba(255,255,255,0.9); font-size: 20px; margin-bottom: 0;">Wildlife Adventure at <span style="white-space: nowrap;">Sri Lanka's</span> Premier National Park</p>
             </div>
         </div>
     </section>
@@ -145,7 +145,7 @@
                 </div>
                 <h2 style="font-size: 38px; font-weight: 700; color: #1e3246; margin-bottom: 30px;">Your Gateway to Yala National Park</h2>
                 <p style="font-size: 17px; color: #666; line-height: 1.8; margin-bottom: 20px;">
-                    Green Villa Yala is a lakefront villa located at Weweyaya, Yodakandiya in Tissamaharama, offering the perfect base for your wildlife adventure. Just 30 minutes from Yala National Park, we provide comfortable accommodation and professional safari tour arrangements.
+                    Green Villa Yala is a lakefront villa located at Weweyaya, Yodakandiya in Tissamaharama, offering the perfect base for your wildlife adventure. Just 30 minutes to Yala National Park, we provide comfortable accommodation and professional safari tour arrangements.
                 </p>
                 <p style="font-size: 17px; color: #666; line-height: 1.8;">
                     We can arrange jeeps for your safari visit to the nearby National Park and to other nature sanctuaries close to our villa, as well as transport to tour anywhere within the region.
@@ -309,9 +309,17 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div>
-                            <h4 style="font-size: 16px; color: #1e3246; margin-bottom: 5px;">Phone Numbers</h4>
-                            <p style="font-size: 15px; color: #666;"><a href="tel:+94761728517" style="color: #666; text-decoration: none;">+94 76 172 8 517</a></p>
-                            <p style="font-size: 15px; color: #666;"><a href="tel:+94716444863" style="color: #666; text-decoration: none;">+94 71 644 4 863</a></p>
+                            <h4 style="font-size: 16px; color: #1e3246; margin-bottom: 5px;">Phone Number</h4>
+                            <p style="font-size: 15px; color: #666;"><a href="tel:+94778222611" style="color: #666; text-decoration: none;">+94 778 222 611</a></p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
+                        <div style="font-size: 24px; width: 50px; height: 50px; background: #e3f2fd; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #2c5f7c;">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 16px; color: #1e3246; margin-bottom: 5px;">WhatsApp</h4>
+                            <p style="font-size: 15px; color: #666;"><a href="https://wa.me/94716444863" target="_blank" style="color: #666; text-decoration: none;">+94 716 444 863</a></p>
                         </div>
                     </div>
                     <div style="display: flex; gap: 20px; margin-bottom: 20px; align-items: center;">
@@ -371,15 +379,12 @@
         <div class="container">
             <div style="text-align: center; max-width: 800px; margin: 0 auto;">
                 <h2 style="font-size: 40px; color: #1e3246; margin-bottom: 20px;">Book Your Wildlife Adventure</h2>
-                <p style="font-size: 18px; color: #666; margin-bottom: 15px; line-height: 1.7;">
+                <p style="font-size: 18px; color: #666; margin-bottom: 40px; line-height: 1.7;">
                     Experience the thrill of Yala National Park from the comfort of Green Villa Yala
                 </p>
-                <p style="font-size: 16px; color: #666; margin-bottom: 40px;">
-                    Contact: 076 172 8 517 / 071 644 4 863
-                </p>
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://wa.me/94716444863" target="_blank" style="display: inline-block; padding: 16px 40px; background: #25D366; color: white; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);">
-                        Book via WhatsApp
+                    <a href="https://wa.me/94716444863" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: #25D366; color: white; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);">
+                        <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Book via WhatsApp
                     </a>
                     <a href="index.html#contact" style="display: inline-block; padding: 16px 40px; background: #2c5f7c; color: white; text-decoration: none; font-size: 16px; font-weight: 600; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;">
                         Contact Us
@@ -419,16 +424,15 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="tel:+94778222611">+94 778 222 611</a></li>
-                        <li><a href="tel:+94716444863">+94 716 444 863</a></li>
-                        <li><a href="mailto:kmkamalranjith@gmail.com">Email Us</a></li>
-                        <li><a href="https://wa.me/94716444863" target="_blank">WhatsApp</a></li>
+                        <li><a href="tel:+94778222611"><i class="fas fa-phone"></i> +94 778 222 611</a></li>
+                        <li><a href="https://wa.me/94716444863" target="_blank"><i class="fab fa-whatsapp"></i> +94 716 444 863</a></li>
+                        <li><a href="mailto:kmkamalranjith@gmail.com"><i class="fas fa-envelope"></i> Email Us</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Unison - World's Trust. All Rights Reserved.</p>
-                <p><a href="admin.html" style="color: rgba(255,255,255,0.3); font-size: 12px;">Admin</a></p>
+                <p>&copy; 2025 Unison - World's Trust. All Rights Reserved.</p>
+                <p><a href="admin.html" style="color: rgba(100,100,100,0.5); font-size: 12px;">Admin</a></p>
             </div>
         </div>
     </footer>
