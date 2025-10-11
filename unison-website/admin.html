@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Unison</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .admin-container {
+            background: white;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .admin-header {
+            background: linear-gradient(135deg, #476d7c 0%, #2c5f7c 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .admin-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .admin-header h1 i {
+            margin-right: 10px;
+        }
+        
+        .admin-header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .login-section {
+            padding: 40px;
+        }
+        
+        .admin-content {
+            padding: 40px;
+            display: none;
+        }
+        
+        .admin-content.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .form-group label i {
+            margin-right: 5px;
+            color: #476d7c;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #476d7c;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%; /* Ensures buttons fill the space */
+            margin-bottom: 10px; /* Spacing between buttons */
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-primary {
+            background: #476d7c;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #2c5f7c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(71, 109, 124, 0.3);
+        }
+        
+        .btn-success {
+            background: #25D366;
+            color: white;
+            margin-top: 10px;
+        }
+        
+        .btn-success:hover {
+            background: #20BA5A;
+        }
+        
+        .btn-logout {
+            background: #e74c3c;
+            color: white;
+            margin-top: 10px;
+        }
+        
+        .btn-logout:hover {
+            background: #c0392b;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: #476d7c;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .alert i {
+            margin-right: 8px;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .info-box h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #1976d2;
+        }
+        
+        .info-box p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1><i class="fas fa-lock"></i> Admin Control Panel</h1>
+            <p>Unison - World's Trust</p>
+        </div>
+        
+        <div class="login-section" id="loginSection">
+            <div class="info-box">
+                <h3>Welcome to Admin Panel</h3>
+                <p>Enter your password to access website settings and manage content.</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="adminPassword"><i class="fas fa-key"></i> Password</label>
+                <input type="password" id="adminPassword" placeholder="Enter admin password">
+            </div>
+            <button class="btn btn-primary" onclick="login()"><i class="fas fa-sign-in-alt"></i> Login</button>
+            <div id="loginError" style="margin-top: 15px;"></div>
+        </div>
+        
+        <div class="admin-content" id="adminContent">
+            <div id="successMessage"></div>
+            
+            <div class="section-title"><i class="fas fa-phone"></i> Contact Information</div>
+            <div class="form-group">
+                <label for="phone1"><i class="fas fa-mobile-alt"></i> Phone Number 1</label>
+                <input type="text" id="phone1" placeholder="+94 778 222 611">
+            </div>
+            <div class="form-group">
+                <label for="phone2"><i class="fab fa-whatsapp"></i> Phone Number 2 (WhatsApp)</label>
+                <input type="text" id="phone2" placeholder="+94 716 444 863">
+            </div>
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" placeholder="kmkamalranjith@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Number (without +)</label>
+                <input type="text" id="whatsapp" placeholder="94716444863">
+            </div>
+            <div class="form-group">
+                <label for="address"><i class="fas fa-map-marker-alt"></i> Physical Address</label>
+                <textarea id="address" placeholder="Negombo Road, Kurana, Katunayake, Sri Lanka"></textarea>
+            </div>
+            
+            <div class="section-title"><i class="fas fa-share-alt"></i> Social Media Links</div>
+            <div class="form-group">
+                <label for="facebook"><i class="fab fa-facebook"></i> Facebook Page URL</label>
+                <input type="url" id="facebook" placeholder="https://facebook.com/yourpage">
+            </div>
+            <div class="form-group">
+                <label for="instagram"><i class="fab fa-instagram"></i> Instagram Profile URL</label>
+                <input type="url" id="instagram" placeholder="https://instagram.com/yourprofile">
+            </div>
+            
+            <div class="section-title"><i class="fas fa-map-marked-alt"></i> Google Maps Location</div>
+            <div class="form-group">
+                <label for="mapIframe"><i class="fas fa-globe"></i> Google Maps Embed URL</label>
+                <textarea id="mapIframe" placeholder="Paste Google Maps embed URL here"></textarea>
+                <small style="color: #666; font-size: 12px;">Go to Google Maps → Share → Embed a map → Copy the src URL</small>
+            </div>
+            
+            <div class="section-title"><i class="fas fa-chart-line"></i> Marketing Tools</div>
+            <div class="form-group">
+                <label for="fbPixel"><i class="fab fa-facebook"></i> Facebook Pixel ID</label>
+                <input type="text" id="fbPixel" placeholder="123456789012345">
+            </div>
+            <div class="form-group">
+                <label for="gaCode"><i class="fas fa-chart-bar"></i> Google Analytics Tracking ID</label>
+                <input type="text" id="gaCode" placeholder="G-XXXXXXXXXX or UA-XXXXXXXXX">
+            </div>
+
+            <button class="btn btn-success" onclick="saveSettings()"><i class="fas fa-save"></i> Save All Settings</button>
+            <button class="btn btn-logout" onclick="logout()"><i class="fas fa-door-open"></i> Logout</button>
+        </div>
+    </div>
+    
+    <script>
+        // Default admin password (CHANGE THIS!)
+        const ADMIN_PASSWORD = 'unison2024';
+        
+        // Login function
+        function login() {
+            const password = document.getElementById('adminPassword').value;
+            const loginError = document.getElementById('loginError');
+            
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('loginSection').style.display = 'none';
+                document.getElementById('adminContent').classList.add('active');
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                loadSettings();
+                loginError.innerHTML = '';
+            } else {
+                loginError.innerHTML = '<div class="alert alert-error"><i class="fas fa-times-circle"></i> Incorrect password!</div>';
+            }
+        }
+        
+        // Check if already logged in
+        window.addEventListener('load', () => {
+            // Check if the login section exists before manipulating it
+            const loginSection = document.getElementById('loginSection');
+            const adminContent = document.getElementById('adminContent');
+            if (sessionStorage.getItem('adminLoggedIn') === 'true' && loginSection && adminContent) {
+                loginSection.style.display = 'none';
+                adminContent.classList.add('active');
+                loadSettings();
+            }
+        });
+        
+        // Load saved settings
+        function loadSettings() {
+            // Check for existence before attempting to set value (for robustness)
+            const getEl = (id) => document.getElementById(id);
+
+            getEl('phone1').value = localStorage.getItem('phone1') || '+94 778 222 611';
+            getEl('phone2').value = localStorage.getItem('phone2') || '+94 716 444 863';
+            getEl('email').value = localStorage.getItem('email') || 'kmkamalranjith@gmail.com';
+            getEl('whatsapp').value = localStorage.getItem('whatsapp') || '94716444863';
+            getEl('address').value = localStorage.getItem('address') || 'Negombo Road, Kurana, Katunayake, Sri Lanka';
+            getEl('facebook').value = localStorage.getItem('facebook') || '';
+            getEl('instagram').value = localStorage.getItem('instagram') || '';
+            getEl('mapIframe').value = localStorage.getItem('mapIframe') || '';
+            getEl('fbPixel').value = localStorage.getItem('fbPixel') || '';
+            getEl('gaCode').value = localStorage.getItem('gaCode') || '';
+        }
+        
+        // Save settings
+        function saveSettings() {
+            const getEl = (id) => document.getElementById(id);
+            
+            localStorage.setItem('phone1', getEl('phone1').value);
+            localStorage.setItem('phone2', getEl('phone2').value);
+            localStorage.setItem('email', getEl('email').value);
+            localStorage.setItem('whatsapp', getEl('whatsapp').value);
+            localStorage.setItem('address', getEl('address').value);
+            localStorage.setItem('facebook', getEl('facebook').value);
+            localStorage.setItem('instagram', getEl('instagram').value);
+            localStorage.setItem('mapIframe', getEl('mapIframe').value);
+            localStorage.setItem('fbPixel', getEl('fbPixel').value);
+            localStorage.setItem('gaCode', getEl('gaCode').value);
+            
+            getEl('successMessage').innerHTML = '<div class="alert alert-success"><i class="fas fa-check-circle"></i> Settings saved successfully! Changes will appear on the website immediately.</div>';
+            
+            setTimeout(() => {
+                getEl('successMessage').innerHTML = '';
+            }, 3000);
+        }
+        
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            document.getElementById('adminContent').classList.remove('active');
+            document.getElementById('loginSection').style.display = 'block';
+            document.getElementById('adminPassword').value = '';
+        }
+        
+        // Allow Enter key to login
+        const adminPassword = document.getElementById('adminPassword');
+        if (adminPassword) {
+            adminPassword.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    login();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
