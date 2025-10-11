@@ -110,8 +110,8 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%; /* Ensures buttons fill the space */
-            margin-bottom: 10px; /* Spacing between buttons */
+            width: 100%;
+            margin-bottom: 10px;
         }
         
         .btn i {
@@ -232,20 +232,16 @@
             
             <div class="section-title"><i class="fas fa-phone"></i> Contact Information</div>
             <div class="form-group">
-                <label for="phone1"><i class="fas fa-mobile-alt"></i> Phone Number 1</label>
+                <label for="phone1"><i class="fas fa-mobile-alt"></i> Phone Number</label>
                 <input type="text" id="phone1" placeholder="+94 778 222 611">
             </div>
             <div class="form-group">
-                <label for="phone2"><i class="fab fa-whatsapp"></i> Phone Number 2 (WhatsApp)</label>
-                <input type="text" id="phone2" placeholder="+94 716 444 863">
+                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Number (with +)</label>
+                <input type="text" id="whatsapp" placeholder="+94 716 444 863">
             </div>
             <div class="form-group">
                 <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
                 <input type="email" id="email" placeholder="kmkamalranjith@gmail.com">
-            </div>
-            <div class="form-group">
-                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Number (without +)</label>
-                <input type="text" id="whatsapp" placeholder="94716444863">
             </div>
             <div class="form-group">
                 <label for="address"><i class="fas fa-map-marker-alt"></i> Physical Address</label>
@@ -306,7 +302,6 @@
         
         // Check if already logged in
         window.addEventListener('load', () => {
-            // Check if the login section exists before manipulating it
             const loginSection = document.getElementById('loginSection');
             const adminContent = document.getElementById('adminContent');
             if (sessionStorage.getItem('adminLoggedIn') === 'true' && loginSection && adminContent) {
@@ -318,13 +313,11 @@
         
         // Load saved settings
         function loadSettings() {
-            // Check for existence before attempting to set value (for robustness)
             const getEl = (id) => document.getElementById(id);
 
             getEl('phone1').value = localStorage.getItem('phone1') || '+94 778 222 611';
-            getEl('phone2').value = localStorage.getItem('phone2') || '+94 716 444 863';
+            getEl('whatsapp').value = localStorage.getItem('whatsapp') || '+94 716 444 863';
             getEl('email').value = localStorage.getItem('email') || 'kmkamalranjith@gmail.com';
-            getEl('whatsapp').value = localStorage.getItem('whatsapp') || '94716444863';
             getEl('address').value = localStorage.getItem('address') || 'Negombo Road, Kurana, Katunayake, Sri Lanka';
             getEl('facebook').value = localStorage.getItem('facebook') || '';
             getEl('instagram').value = localStorage.getItem('instagram') || '';
@@ -338,9 +331,8 @@
             const getEl = (id) => document.getElementById(id);
             
             localStorage.setItem('phone1', getEl('phone1').value);
-            localStorage.setItem('phone2', getEl('phone2').value);
-            localStorage.setItem('email', getEl('email').value);
             localStorage.setItem('whatsapp', getEl('whatsapp').value);
+            localStorage.setItem('email', getEl('email').value);
             localStorage.setItem('address', getEl('address').value);
             localStorage.setItem('facebook', getEl('facebook').value);
             localStorage.setItem('instagram', getEl('instagram').value);
